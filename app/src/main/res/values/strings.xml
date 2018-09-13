@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">My Calc</string>
+    <string name="no_transaction_yet">No Transaction Yet!</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="_91">+91</string>
+    <string name="login">Login</string>
+    <string name="date">Date</string>
+    <string name="description">Description</string>
+    <string name="amount">Amount</string>
+    <string name="add_transaction">Add Transaction</string>
+    <string name="please_enter_valid_mobile_number">Please enter valid mobile number</string>
+    <string name="please_enter_valid_verification_code">Please enter valid Verification code</string>
+    <string name="sucess">Success</string>
+    <string name="failed">failed</string>
+    <string name="code_sent">Verification Code Sent</string>
+    <string name="verification_code">Verification code</string>
+    <string name="remove">Remove</string>
+    <string name="add">Add</string>
+    <string name="total_outcome">Total Outcome</string>
+    <string name="total_income">Total Income</string>
+</resources>
