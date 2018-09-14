@@ -5,6 +5,7 @@
     <color name="colorPrimaryDark">#0097A7</color>
     <color name="colorAccent">#FF5252</color>
     <color name="white">#FFFFFF</color>
+    <color name="grey">#9e9e9e</color>
     <color name="divider">#999999</color>
     <color name="hintColor">#757575</color>
 
@@ -13,4 +14,5 @@
     <color name="orange">#ffa726</color>
     <color name="colorPrimaryTrans">#8fb2ebf2</color>
     <color name="black_effective">#64000000</color>
+    <color name="bg">#eeeeee</color>
 </resources>

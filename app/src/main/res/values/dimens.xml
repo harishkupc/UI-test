@@ -13,4 +13,9 @@
     <dimen name="s24">24sp</dimen>
     <dimen name="x4">4dp</dimen>
     <dimen name="s16">16sp</dimen>
+    <dimen name="x150">150dp</dimen>
+    <dimen name="x100">100dp</dimen>
+    <dimen name="x120">120dp</dimen>
+    <dimen name="x1">1dp</dimen>
+    <dimen name="x2">2dp</dimen>
 </resources>

@@ -15,7 +15,17 @@
     <string name="code_sent">Verification Code Sent</string>
     <string name="verification_code">Verification code</string>
     <string name="remove">Remove</string>
+    <string name="_remove">- Remove</string>
     <string name="add">Add</string>
+    <string name="_add">+ Add</string>
     <string name="total_outcome">Total Outcome</string>
     <string name="total_income">Total Income</string>
+    <string name="remaining">Remaining</string>
+    <string name="add_filter">Add Filter</string>
+    <string name="last_30_days">Last 30 days</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
+    <string name="income">Income</string>
+    <string name="outcome">Outcome</string>
+    <string name="last_7_days">Last 7 days</string>
 </resources>

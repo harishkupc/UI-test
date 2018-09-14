@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     android:orientation="vertical"
     tools:context=".activities.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            android:background="@color/colorPrimaryDark"
-            android:theme="@style/ToolBarStyle" />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -30,56 +32,78 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimaryDark"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/filter"
-                        android:layout_width="wrap_content"
+                    <HorizontalScrollView
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginEnd="@dimen/x16"
-                        android:drawablePadding="@dimen/x8"
-                        android:drawableStart="@drawable/ic_filter"
-                        android:gravity="center"
-                        android:text="7 days"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/s16" />
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/linear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/x8"
+                                android:gravity="center"
+                                android:padding="@dimen/x8"
+                                android:paddingTop="@dimen/x8"
+                                android:text="Filter" />
+
+                            <TextView
+                                android:id="@+id/addFilter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/x8"
+                                android:background="@drawable/add_filter_bg"
+                                android:drawableStart="@drawable/ic_add"
+                                android:gravity="center"
+                                android:paddingBottom="@dimen/x8"
+                                android:paddingEnd="@dimen/x8"
+                                android:paddingStart="@dimen/x16"
+                                android:paddingTop="@dimen/x8"
+                                android:text="Add Filter"
+                                android:textColor="@color/colorPrimary" />
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/x16">
+                        android:layout_margin="@dimen/x8">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
-                            android:padding="@dimen/x8">
+                            android:padding="@dimen/x16">
 
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="@dimen/x8">
+                                android:orientation="vertical">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/total_income"
-                                    android:textColor="@color/green" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
 
+                                    <com.github.mikephil.charting.charts.PieChart
+                                        android:id="@+id/piechart"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" />
 
-                                <TextView
-                                    android:id="@+id/in"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/x8"
-                                    android:text="0"
-                                    android:textColor="@color/green"
-                                    android:textSize="@dimen/s20" />
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -87,25 +111,80 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="@dimen/x8">
+                                android:orientation="vertical">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/total_outcome"
-                                    android:textColor="@color/red" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
 
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/total_income"
+                                        android:textColor="@color/green" />
 
-                                <TextView
-                                    android:id="@+id/out"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    <TextView
+                                        android:id="@+id/in"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textColor="@color/green"
+                                        android:textSize="@dimen/s20" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
                                     android:layout_marginTop="@dimen/x8"
-                                    android:text="0"
-                                    android:textColor="@color/red"
-                                    android:textSize="@dimen/s20" />
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/total_outcome"
+                                        android:textColor="@color/red" />
+
+
+                                    <TextView
+                                        android:id="@+id/out"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textColor="@color/red"
+                                        android:textSize="@dimen/s20" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginTop="@dimen/x8"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/remaining"
+                                        android:textColor="@color/colorPrimary" />
+
+
+                                    <TextView
+                                        android:id="@+id/remaining"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="@dimen/s20" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -114,44 +193,6 @@
                     </android.support.v7.widget.CardView>
 
                 </LinearLayout>
-
-                <!--<LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:orientation="horizontal">
-
-                    <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/add"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="@dimen/x8"
-                        android:src="@drawable/ic_add"
-                        android:theme="@style/AddFloatingBtn"
-                        app:fabSize="mini" />
-
-                    <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/remove"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@+id/add"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="@dimen/x8"
-                        android:src="@drawable/ic_remove"
-                        android:theme="@style/RemoveFloatingBtn"
-                        app:fabSize="mini" />
-
-                    <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/filter"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/x8"
-                        android:src="@drawable/ic_filter"
-                        app:fabSize="mini" />
-
-                </LinearLayout>-->
 
                 <LinearLayout
                     android:id="@+id/nf"
@@ -174,7 +215,6 @@
                         android:layout_marginTop="@dimen/x16"
                         android:gravity="center"
                         android:text="@string/no_transaction_yet"
-                        android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/s20" />
 
                 </LinearLayout>
@@ -192,4 +232,38 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/divider"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/x1">
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="@string/_add"
+            android:textColor="@color/green"
+            android:textSize="@dimen/s16" />
+
+        <View
+            android:layout_width="@dimen/x1"
+            android:layout_height="match_parent"
+            android:background="@color/bg" />
+
+        <Button
+            android:id="@+id/remove"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="@string/_remove"
+            android:textColor="@color/red"
+            android:textSize="@dimen/s16" />
+
+    </LinearLayout>
+
+</LinearLayout>

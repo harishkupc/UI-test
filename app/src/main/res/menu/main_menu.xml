@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
+    <!--<item
         android:id="@+id/add"
         android:icon="@drawable/ic_add"
         android:title="@string/add"
@@ -11,11 +11,11 @@
         android:id="@+id/remove"
         android:icon="@drawable/ic_remove"
         android:title="@string/remove"
-        app:showAsAction="always" />
+        app:showAsAction="always" />-->
 
     <item
         android:id="@+id/filter"
-        android:icon="@drawable/ic_filter"
+        android:icon="@drawable/ic_filter_black"
         android:title="@string/remove"
         app:showAsAction="always" />
 

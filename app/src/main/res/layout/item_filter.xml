@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/filter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/x8"
+    android:background="@drawable/filter_bg"
+    android:drawableEnd="@drawable/ic_clear_white"
+    android:gravity="center"
+    android:paddingBottom="@dimen/x8"
+    android:paddingEnd="@dimen/x8"
+    android:paddingStart="@dimen/x16"
+    android:paddingTop="@dimen/x8"
+    android:text="Add Filter"
+    android:textColor="@color/white" />
