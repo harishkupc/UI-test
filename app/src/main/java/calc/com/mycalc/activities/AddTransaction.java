@@ -76,27 +76,17 @@ public class AddTransaction extends BaseActivity implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.done:
-                int i = 100;
-                while (i > 0) {
-                    key = database.getReference(AppConfig.USERS).push().getKey();
-                    Map<String, Object> object = new HashMap<>();
-                    object.put(AppConfig.DATE, (i * 106400000));
-                    object.put(AppConfig.DESCRIPTION, description.getText().toString().trim());
-                    if (i % 2 == 0) {
-                        type = 0;
-                    } else {
-                        type = 1;
-                    }
-                    object.put(AppConfig.TYPE, type);
-                    object.put(AppConfig.AMOUNT, Integer.parseInt(amount.getText().toString().trim()));
-                    object.put(AppConfig.FIRE_ID, -1 * new Date().getTime());
-
-                    database.getReference(AppConfig.USERS).child(firebaseAuth.getUid()).child(AppConfig.TRANSACTIONS).child(key).setValue(object);
-                    finish();
-                    i--;
-                }
-
-//            break;
+                key = database.getReference(AppConfig.USERS).push().getKey();
+                Map<String, Object> object = new HashMap<>();
+                object.put(AppConfig.DATE, System.currentTimeMillis());
+                object.put(AppConfig.DESCRIPTION, description.getText().toString().trim());
+                object.put(AppConfig.TYPE, type);
+                object.put(AppConfig.AMOUNT, Integer.parseInt(amount.getText().toString().trim()));
+                object.put(AppConfig.FIRE_ID, -1 * new Date().getTime());
+                database.getReference(AppConfig.USERS).child(firebaseAuth.getUid())
+                        .child(AppConfig.TRANSACTIONS).child(key).setValue(object);
+                finish();
+                break;
         }
     }
 }
